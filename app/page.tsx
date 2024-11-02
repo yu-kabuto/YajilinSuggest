@@ -1,16 +1,20 @@
-import Hero from "@/components/hero";
-import ConnectSupabaseSteps from "@/components/tutorial/connect-supabase-steps";
-import SignUpUserSteps from "@/components/tutorial/sign-up-user-steps";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
+import Display from "@/components/display";
 
 export default async function Index() {
+
   return (
     <>
-      <Hero />
-      <main className="flex-1 flex flex-col gap-6 px-4">
-        <h2 className="font-medium text-xl mb-4">Next steps</h2>
-        {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-      </main>
+      <h1>ヤジリンおすすめ問題</h1>
+      私が過去にネットで出題したヤジリン(10*10)を収録しました。
+      <br/>
+      問題の感覚に応じてボタンを押してください。
+      <br/>
+      たくさん投票すると徐々にあなたのレベルに合った問題になります。
+      <br/>
+      Solve problems and vote.
+      <br/>
+      <br/>
+      <Display></Display>
     </>
-  );
+  )
 }
