@@ -53,7 +53,7 @@ export default function VoteUI(props: {
 
         setSolverrate(solverrate + solverK * (solveresult - solveProb));
 
-        if(!num) return;
+        if(prevprob.url == "error") return;
 
         try {
             const { error } = await supabase
@@ -80,7 +80,7 @@ export default function VoteUI(props: {
       }
       setPrevProb(props.problem);
       setPrevbutton(button);
-      await pickUp(solverrate, props.setProblem);
+      await pickUp(solverrate, num, props.setProblem);
     });
 
     return(

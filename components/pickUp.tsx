@@ -3,11 +3,12 @@ import getProblems from "./getProblems"
 
 export async function pickUp(
   standard: number,
+  num: number,
   setProblem: Dispatch<SetStateAction<Problem>>
 ){
   const list = await getProblems();
 
-  const allowance = 16.0;
+  const allowance = Math.max(64.0 * Math.exp(-num/2.0), 1.0);
 
   let closest =
     {
